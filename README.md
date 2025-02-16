@@ -19,7 +19,7 @@ This project is part of my university coursework in the Spring Boot module, deve
 🛠️ Technologies Used
 Java 17
 Spring Boot (Spring MVC, Spring Data JPA)
-MySQL (or H2 for testing)
+MySQL
 Lombok
 Git & GitHub
 📅 Project Progress
