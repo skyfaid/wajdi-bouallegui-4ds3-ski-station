@@ -2,6 +2,7 @@ package tn.esprit.wajdibouallegui4ds3.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,4 +17,7 @@ public class Instructor {
     private String firstName;
     private String lastName;
     private LocalDate dateOfHire;
+
+    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Course> courses;
 }

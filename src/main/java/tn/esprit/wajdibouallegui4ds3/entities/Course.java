@@ -1,6 +1,7 @@
 package tn.esprit.wajdibouallegui4ds3.entities;
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,5 +23,12 @@ public class Course {
 
     private Float price;
     private int timeSlot;
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Registration> registrations;
+
+    @ManyToOne
+    @JoinColumn(name = "instructor_id", nullable = false)
+    private Instructor instructor;
 }
 

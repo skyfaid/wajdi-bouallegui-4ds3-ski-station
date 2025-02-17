@@ -1,7 +1,7 @@
 package tn.esprit.wajdibouallegui4ds3.entities;
 import jakarta.persistence.*;
 import lombok.*;
-
+import java.util.List;
 @Entity
 @Getter
 @Setter
@@ -19,4 +19,7 @@ public class Piste {
 
     private int length;
     private int slope;
+
+    @ManyToMany(mappedBy = "pistes")
+    private List<Skier> skiers;
 }

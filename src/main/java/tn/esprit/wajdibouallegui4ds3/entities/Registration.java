@@ -13,4 +13,12 @@ public class Registration {
     private Long numRegistration;
 
     private int numWeek;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
+
+    @ManyToOne
+    @JoinColumn(name = "skier_id", nullable = false)
+    private Skier skier;
 }

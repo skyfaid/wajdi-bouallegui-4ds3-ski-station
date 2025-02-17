@@ -19,4 +19,8 @@ public class Subscription {
 
     @Enumerated(EnumType.STRING)
     private TypeSubscription typeSub;
+
+    @OneToOne
+    @JoinColumn(name = "skier_id", unique = true)
+    private Skier skier;
 }
