@@ -10,4 +10,5 @@ public interface ISkierService {
     Skier retrieveSkier (Long numSkier);
     void removeSkier(Long numSkier);
     List<Skier> retrieveAll ();
+    Skier assignSkierToPiste(Long numSkier, Long numPiste);
 }

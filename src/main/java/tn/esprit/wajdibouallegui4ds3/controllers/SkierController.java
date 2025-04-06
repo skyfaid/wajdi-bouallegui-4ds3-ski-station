@@ -33,5 +33,16 @@ public class SkierController {
     public void removeSkier(@PathVariable Long numSkier){
         skierServices.removeSkier(numSkier);
     }
+
+    @PutMapping("/assignToPiste/{numSkier}/{numPiste}")
+    public Skier assignSkierToPiste(@PathVariable Long numSkier, @PathVariable Long numPiste) {
+        return skierServices.assignSkierToPiste(numSkier, numPiste);
+    }
+    @PostMapping("/addAndAssignToCourse/{numCourse}")
+    public Skier addSkierAndAssignToCourse(
+            @RequestBody Skier skier,
+            @PathVariable Long numCourse) {
+        return skierServices.addSkierAndAssignToCourse(skier, numCourse);
+    }
 }
 
